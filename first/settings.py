@@ -75,18 +75,18 @@ WSGI_APPLICATION = 'first.wsgi.application'
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'myams',
+        'USER': 'root',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
-#     'default': {
-#   'ENGINE': 'django.db.backends.mysql',　　# 数据库引擎
-#   'NAME': 'django',　　　　　　　　　　　　　　# 你要存储数据的库名，事先要创建之
-#   'USER': 'django',　　　　　　　　　　　　　　# 数据库用户名
-#   'PASSWORD': 'django@123',　　　　　　　　　# 密码
-#   'HOST': 'localhost',　　　　　　　　　　　　# 主机
-#   'PORT': '3306',　　　　　　　　　　　　　　 # 数据库使用的端口
-#  }
 }
 
 
