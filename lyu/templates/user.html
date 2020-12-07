@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+
+    {% if notfound %}
+
+    <div class="alert alert-danger" role="alert">
+        {{notfound}}
+    </div>
+    {% else %}
+    <div class="container">
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="{{username.avatar_url}}" alt="" width="72" height="72">
+            <h2>{{username.name}}</h2>
+            <p class="lead">{{username.html_url}}</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 order-md-2 mb-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">Link Message</span>
+                    <span class="badge badge-secondary badge-pill">5</span>
+                </h4>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">followers_url</h6>
+                            <small class="text-muted">{{username.followers_url}}</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">subscriptions_url</h6>
+                            <small class="text-muted">{{username.subscriptions_url}}</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">organizations_url</h6>
+                            <small class="text-muted">{{username.organizations_url}}</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">repos_url</h6>
+                            <small class="text-muted">{{username.repos_url}}</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">received_events_url</h6>
+                            <small class="text-muted">{{username.received_events_url}}</small>
+                        </div>
+                    </li>
+                </ul>
+
+
+            </div>
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3">Person Message</h4>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">company</label>
+                        <div class="form-control">{{username.company}} </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">blog</label>
+                        <div class="form-control">{{username.blog}} </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">location</label>
+                        <div class="form-control">{{username.location}} </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">twitter_username</label>
+                        <div class="form-control">{{username.twitter_username}} </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">public_repos</label>
+                        <div class="form-control">{{username.public_repos}} </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">followers</label>
+                        <div class="form-control">{{username.followers}} </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">following</label>
+                        <div class="form-control">{{username.following}} </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">updated_at</label>
+                        <div class="form-control">{{username.updated_at}} </div>
+                    </div>
+                </div>
+                <hr class="mb-4">
+                <a class="btn btn-primary btn-lg btn-block" type="submit" href="{%url 'index' %}">返回</a>
+
+            </div>
+        </div>
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">© 2020-12-07 First Django</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="https://www.jianshu.com/u/5aae0fccb4a3">简书</a></li>
+                <li class="list-inline-item"><a href="https://500px.com.cn/lbx745458741">500px</a></li>
+                <li class="list-inline-item"><a href="https://github.com/lvbaoxin">Github</a></li>
+            </ul>
+        </footer>
+    </div>
+    {% endif %}
+
+
+</div>
+{% endblock %}
